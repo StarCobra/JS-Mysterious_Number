@@ -13,7 +13,7 @@ let nbEssais = 0;
 let difficulty = 3;
 let pseudo;
 
-let random = getRandomInt(98);
+export let random = getRandomInt(98);
 document.querySelector("#cheat").innerHTML = random; //A suppr
 
 function getValue() {
@@ -57,6 +57,13 @@ const ButtonPseudo = document.querySelector("#buttonPseudo");
 ButtonPseudo.addEventListener("click", function (event) {
     document.querySelector(".pseudo").style.display = "none";
     recupPseudo();
-
-    SaveClassement(`${pseudo},${nbEssais},${difficulty}`);
+    SaveClassement(`${pseudo}`, `${nbEssais}`, `${difficulty}`);
+    Classement();
 });
+
+let classement = document.querySelector("#classement")
+
+function Classement() {
+    let first = LoadClassement();
+    classement.innerHTML = OrderClassement(first);
+}

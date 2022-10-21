@@ -1,6 +1,9 @@
-export function SaveClassement(Pseudo,NbEssais,Difficulté=3) {
-	var Data = "NumMyst|"+Pseudo+"|"+Difficulté+"|"+NbEssais;
-	localStorage.setItem(Pseudo,Data);
+import { random } from './level_1.js';
+
+export function SaveClassement(Pseudo, NbEssais, difficulty) {
+	if(!difficulty) {difficulty = 2;}
+	var Data = random + "|" + Pseudo + "|" + NbEssais + "|" + difficulty;
+	localStorage.setItem(Pseudo, Data);
 }
 
 export function LoadJoueur(Pseudo) {
@@ -14,9 +17,9 @@ export function LoadIndex(Index) {
 export function LoadClassement() {
 	var Classement = [];
 	var y = 0;
-	for(var i=0;i<localStorage.length;i++) {
+	for (var i = 0; i < localStorage.length; i++) {
 		var temp = LoadIndex(i).split("|");
-		if(typeof temp[3] !== 'undefined') {
+		if (typeof temp[3] !== 'undefined') {
 			Classement[y++] = temp;
 		}
 	}
@@ -24,10 +27,10 @@ export function LoadClassement() {
 }
 
 export function Clear() {
-		localStorage.clear();
+	localStorage.clear();
 }
 
-export function Order(a,b) {
+export function Order(a, b) {
 	// Test de calcul de score
 	//console.log("score a ("+a[1]+") = "+(((20-a[3])*a[2])));
 	//console.log("score b ("+b[1]+") = "+((20-b[3])*b[2]));
@@ -35,10 +38,10 @@ export function Order(a,b) {
 }
 
 export function Score(a) {
-	return ((20-a[3])*a[2]);
+	return ((20 - a[3]) * a[2]);
 }
 
 //Rend les joueurs par ordre de classement (indice 0 = plus faible; indice 1 < indice 2)
 export function OrderClassement(Classement) {
-	return Classement.sort((a, b) => Order(a,b));
+	return Classement.sort((a, b) => Order(a, b));
 }
