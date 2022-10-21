@@ -9,16 +9,49 @@
 </head>
 <body>
 
-    <h1>Bienvenue au Jeu du Mysterious Number</h1>
+    <h1>Bienvenue au jeu du <em>Mysterious Number</em></h1>
     <h2>Le jeu où tu dois deviner le nombre caché</h2>
-    <div>
-        <input type="button" value="Jouer">
-        <input id="inputNumber" type="number" inputmode="numeric" min="0" max="99" placeholder="Saisissez un nombre entre 0 et 99">
-        <input type="button" value="Valider">
-        <input type="button" value="Afficher le classement">
-        <input type="button" value="Réinitialiser le classement">
-        <input type="button" value="Rechercher un joueur">
-    </div>
+
+    <section id="iDifficult">
+        <h3>Choisissez un niveau</h3>
+        <div>
+            <input id="easy" type="button" value="Facile">
+            <input id="medium" type="button" value="Moyen">
+            <input id="hard" type="button" value="Difficile">
+            <input id="impossible" type="button" value="Impossible">
+        </div>
+    </section>
+    
+    <section id="iPlay">
+        <h3>Saisissez un nombre entre 0 et 99</h3>
+        <h3>Nombre d'essais restants : n</h3>
+        <div>
+            <input id="inputNumber" type="number" inputmode="numeric" min="0" max="99" placeholder="Saisir un nombre">
+            <input id="submit" type="button" value="Valider">
+        </div>
+    </section>
+
+    <section id="iEnd">
+        <h3>/*A faire : afficher ici si le joueur a gagné ou perdu*/</h3>
+        <div>
+            <input id="replay" type="button" value="Rejouer">
+            <input id="displayScore" type="button" value="Afficher le classement">
+        </div>
+    </section>
+    
+    <section id="iScore">
+        <h3>Classement</h3>
+        <ol id="leaderboard">
+            <li>test (score)</li>
+            <li>test (score)</li>
+            <li>test (score)</li>
+        </ol>
+        <div>
+            <input id="replay" type="button" value="Rejouer">
+            <input id="resetScore" type="button" value="Réinitialiser le classement">
+            <input id="findPlayer" type="button" value="Rechercher un joueur">
+        </div>
+    </section>
     
 </body>
 </html>
