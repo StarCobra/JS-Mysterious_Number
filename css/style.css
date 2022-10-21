@@ -27,7 +27,7 @@ body{
 div{
     display: flex;
     flex-direction: column;
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: white;
     color: #222222;
     margin: 16px auto;
@@ -51,20 +51,24 @@ input[type=button]:hover{
     background-color: white;
     color: #333333;
 }
-input[type=number]{
+input[type=number],input[type=text]{
     border: gray solid 2px;
 }
-input[type=number]:focus{
+input[type=number]:focus, input[type=text]:focus{
     outline: none;
     border: #333333 solid 2px;
 }
+
 #iDifficult{
     display: block;
 }
 #iPlay{
     display: none;
 }
-#iEnd{
+#iWin{
+    display: none;
+}
+#iLose{
     display: none;
 }
 #iScore{
