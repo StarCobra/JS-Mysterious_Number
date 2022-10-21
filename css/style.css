@@ -58,3 +58,15 @@ input[type=number]:focus{
     outline: none;
     border: #333333 solid 2px;
 }
+#iDifficult{
+    display: block;
+}
+#iPlay{
+    display: none;
+}
+#iEnd{
+    display: none;
+}
+#iScore{
+    display: none;
+}
