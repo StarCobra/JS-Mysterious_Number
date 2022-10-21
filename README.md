@@ -8,9 +8,10 @@ A ces fins de multiples fonctions ont été créer :
 
 
 
-      ### --- Stockage et Tri du Classement ---
+### --- Stockage et Tri du Classement ---
 
    ***SaveClassement(Pseudo,NbEssais,Difficulté=3)*** : Sauvegarde une entrée de classement contenant le pseudo, le nombre d'essais pris pour trouver ainsi que la difficulté à laquelle la partie a été faite (pour tant que l'on a pas géré cela, j'ai mis une valeur par défaut de 3). Le tout est mis à l'indice équivalent au Pseudo du Joueur (Cepandant cela empêche un joueur de prendre plusieurs spots sur le classement). Les différentes données sont séparé par '|'.
+
    *LoadJoueur(Pseudo)* : Cette fonction utilisé en interne permet de load un joueur spécifique avec son pseudo. Le rendu est une chaine de caractère non traitée.
 
    *LoadIndex(Index)* : Cette fonction utilisé en interne permet de load un joueur spécifique avec l'indice chiffré sur le tableau. Le rendu est une chaine de caractère non traitée.
@@ -25,7 +26,7 @@ A ces fins de multiples fonctions ont été créer :
 
    ***OrderClassement(Classement)*** : Cette fonction prenant pouur argument le classement complet est capable de le trier par Score avant de le redonner trié; les indices les plus bas (0,1..) étant ceux au plus mauvais score tandis que ceux qui ont les plus haut indices sont ceux avec le meilleur score.
 
-      ### --- Stockage de la Config ---
+### --- Stockage de la Config ---
 
    *SaveConfig(Essais_Max,Caractere_Max)* : Permet de sauvegarder la config au sein du Local Storage (à l'indice 'config'). Les différentes données sont séparé par '~'.
 
