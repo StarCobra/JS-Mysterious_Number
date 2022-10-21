@@ -23,8 +23,8 @@
     </section>
     
     <section id="iPlay">
-        <h3>Saisissez un nombre entre 0 et 99</h3>
-        <h3>Nombre d'essais restants : n</h3>
+        <h3 id="playNumber"></h3>
+        <h3>Nombre d'essais restants : <span id="essaiRestant"></span>.</h3>
         <div>
             <input id="inputNumber" type="number" inputmode="numeric" min="0" max="99" placeholder="Saisir un nombre">
             <input id="submit" type="button" value="Valider">
@@ -36,7 +36,7 @@
         <h2>*N*</h2>
         <h3>Vous l'avez trouvé en *x* essais</h3>
         <h3>Veuillez inscrire votre pseudo</h3>
-        <div>
+        <div class="pseudo">
             <input id="inputPseudo" type="text" placeholder="Saisir un pseudo">
             <input id="submitPseudo" type="button" value="Valider">
         </div>
@@ -64,6 +64,6 @@
             <input id="findPlayer" type="button" value="Rechercher un joueur">
         </div>
     </section>
-    
+    <script type="module" src="level_1.js"></script>
 </body>
 </html>
