@@ -22,10 +22,17 @@ function Verification() {
         } else if(verifNumber < random) {
             result.innerHTML = verifNumber+" est inférieur au nombre Mystère !";
         } else {
-            result.innerHTML = "Félicitations ! Vous avez trouvé le nombre Mystère qui était :"+random;
+            result.innerHTML = "Félicitations ! Vous avez trouvé le nombre Mystère qui était : "+random+".";
         }
     } else {
         alert("Votre nombre n'est pas compris entre 1 et 99.")
     }
     nbPropose.value = "";
-}
+}   
+
+const input = document.querySelector("#input");
+input.addEventListener("keyup", function(event) {
+    if (event.key === "Enter" || event.key === 13) {
+       return Verification();
+    }
+});
