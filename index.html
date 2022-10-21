@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS Mysterious Number</title>
+</head>
+<body>
+
+    <h1>Bienvenue au jeu du <em>Mysterious Number</em></h1>
+    <h2>Le jeu où tu dois deviner le nombre caché</h2>
+
+    <section id="iDifficult">
+        <h3>Choisissez un niveau</h3>
+        <div>
+            <input id="easy" type="button" value="Facile">
+            <input id="medium" type="button" value="Moyen">
+            <input id="hard" type="button" value="Difficile">
+            <input id="impossible" type="button" value="Impossible">
+        </div>
+    </section>
+    
+    <section id="iPlay">
+        <h3>Saisissez un nombre entre 0 et 99</h3>
+        <h3>Nombre d'essais restants : n</h3>
+        <div>
+            <input id="inputNumber" type="number" inputmode="numeric" min="0" max="99" placeholder="Saisir un nombre">
+            <input id="submit" type="button" value="Valider">
+        </div>
+    </section>
+
+    <section id="iWin">
+        <h3>Félicitations ! Vous avez trouvé le nombre Mystère</h3>
+        <h2>*N*</h2>
+        <h3>Vous l'avez trouvé en *x* essais</h3>
+        <h3>Veuillez inscrire votre pseudo</h3>
+        <div>
+            <input id="inputPseudo" type="text" placeholder="Saisir un pseudo">
+            <input id="submitPseudo" type="button" value="Valider">
+        </div>
+    </section>
+
+    <section id="iLose">
+        <h3>Vous avez perdu :(</h3>
+        <h3>Le nombre mystère était : *N*</h3>
+        <div>
+            <input id="replay" type="button" value="Rejouer">
+            <input id="displayScore" type="button" value="Afficher le classement">
+        </div>
+    </section>
+    
+    <section id="iScore">
+        <h3>Classement</h3>
+        <ol id="leaderboard">
+            <li>test (score)</li>
+            <li>test (score)</li>
+            <li>test (score)</li>
+        </ol>
+        <div>
+            <input id="replay" type="button" value="Rejouer">
+            <input id="resetScore" type="button" value="Réinitialiser le classement">
+            <input id="findPlayer" type="button" value="Rechercher un joueur">
+        </div>
+    </section>
+    
+</body>
+</html>
