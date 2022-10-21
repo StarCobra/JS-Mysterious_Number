@@ -2,65 +2,61 @@
 
 import { SaveClassement, LoadJoueur, LoadIndex, LoadClassement, Clear, Order, Score, OrderClassement } from "./System_Stockage.js";
 
+document.querySelector(".pseudo").style.display = "none";
+
 function getRandomInt(max) {
-    return Math.floor((Math.random() * max)+1);
-}
-
-let random = getRandomInt(98);
-
-let nbPropose = document.querySelector("#input");
-
-function getValue() {
-    let value = nbPropose.value;
-    console.log(value);
-    return value;
+    return Math.floor((Math.random() * max) + 1);
 }
 
 let nbEssais = 0;
-let nbEssaisMax;
+//let nbEssaisMax = 20;
 let difficulty = 3;
+let pseudo;
 
-let result = document.querySelector("#response");
-let cheat = document.querySelector("#cheat");
+let random = getRandomInt(98);
+document.querySelector("#cheat").innerHTML = random; //A suppr
 
-cheat.innerHTML = random;
+function getValue() {
+    return document.querySelector("#input").value;
+}
 
 function Verification() {
-    let verifNumber = getValue();
-    if((verifNumber < 100) && (verifNumber > 0)) {
+    let nbPropose = getValue();
+
+    if ((nbPropose < 100) && (nbPropose > 0)) {
         nbEssais++;
-        if(verifNumber > random) {
-            result.innerHTML = verifNumber+" est supérieur au nombre Mystère !";
-        } else if(verifNumber < random) {
-            result.innerHTML = verifNumber+" est inférieur au nombre Mystère !";
-        } else {
-            result.innerHTML = "Félicitations ! Vous avez trouvé le nombre Mystère qui était : "+random+".";
-            result.innerHTML += "<br>Vous avez trouvé en "+nbEssais+" essais !";
-            Victore();
+        
+        if (nbPropose > random) {
+            document.querySelector("#response").innerHTML = nbPropose + " est supérieur au nombre Mystère !";
+        } else if (nbPropose < random) {
+            document.querySelector("#response").innerHTML = nbPropose + " est inférieur au nombre Mystère !";
+        } else if (nbPropose == random) {
+            document.querySelector("#response").innerHTML = "Félicitations ! Vous avez trouvé le nombre Mystère qui était : " + random + ".";
+            document.querySelector("#response").innerHTML += "<br>Vous avez trouvé en " + nbEssais + " essais !";
+
+            ButtonPropose.disabled = true;
+            document.querySelector(".pseudo").style.display = "block";
         }
     } else {
         alert("Votre nombre n'est pas compris entre 1 et 99.")
     }
-    nbPropose.value = "";
-}   
+    document.querySelector("#input").value = "";
+}
 
-const input = document.querySelector("#input");
-input.addEventListener("keyup", function(event) {
-    if (event.key === "Enter" || event.key === 13) {
-       return Verification();
-    }
+const ButtonPropose = document.querySelector("#button");
+ButtonPropose.addEventListener("click", function (event) {
+    Verification();
 });
 
-function getPseudo() {
-    let pseudo = document.querySelector('#input-pseudo');
-    let value = pseudo.value;
-    console.log(value);
-    return value;
+function recupPseudo() {
+    pseudo = document.querySelector("#inputPseudo").value;
+    return pseudo;
 }
 
-const valuepseudo = getPseudo();
+const ButtonPseudo = document.querySelector("#buttonPseudo");
+ButtonPseudo.addEventListener("click", function (event) {
+    document.querySelector(".pseudo").style.display = "none";
+    recupPseudo();
 
-function Victore() {
-    result.innerHTML += "<br><br><h4>Veuillez inscrire votre pseudo :</h4><input type='text' id='input-pseudo' placeholder='votre pseudo'>";
-    result.innerHTML += "<button id='button-pseudo' onclick='SaveClassement("+valuepseudo+","+nbEssais+","+difficulty+");'>Valider !</button>";
-}
+    SaveClassement(`${pseudo},${nbEssais},${difficulty}`);
+});
