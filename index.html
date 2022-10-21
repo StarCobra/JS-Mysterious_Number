@@ -27,18 +27,19 @@
         <h3>Nombre d'essais restants : <span id="essaiRestant"></span>.</h3>
         <div>
             <input id="inputNumber" type="number" inputmode="numeric" min="0" max="99" placeholder="Saisir un nombre">
-            <input id="submit" type="button" value="Valider">
+            <input id="submit" type="button" value="Valider !">
+            <div id="response"></div>
         </div>
     </section>
 
     <section id="iWin">
-        <h3>Félicitations ! Vous avez trouvé le nombre Mystère</h3>
-        <h2>*N*</h2>
-        <h3>Vous l'avez trouvé en *x* essais</h3>
-        <h3>Veuillez inscrire votre pseudo</h3>
+        <h3>Félicitations ! Vous avez trouvé le nombre Mystère !</h3>
+        <h2 id="numberMyst"></h2>
+        <h3>Vous l'avez trouvé en <span id="theEssai"></span> essais !</h3>
+        <h3>Veuillez inscrire votre pseudo :</h3>
         <div class="pseudo">
             <input id="inputPseudo" type="text" placeholder="Saisir un pseudo">
-            <input id="submitPseudo" type="button" value="Valider">
+            <input id="submitPseudo" type="button" value="Valider !">
         </div>
     </section>
 

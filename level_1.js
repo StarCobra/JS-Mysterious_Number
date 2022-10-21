@@ -13,13 +13,15 @@ let easy;
 let medium;
 let hard;
 let impossible;
-let alert = 99;
+let range = 99;
 let playNumber = document.querySelector("#playNumber");
+let difficulty;
 
-playNumber.innerHTML = "Saisissez un nombre entre 0 et 99.";
+playNumber.innerHTML = "Saisissez un nombre entre 1 et 99.";
 
 function getEasy() {
     easy = document.querySelector("#easy").value;
+    difficulty = 1;
     nbEssaisMax = 40;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return easy;
@@ -36,6 +38,7 @@ inputEasy.addEventListener("click", function (event) {
 
 function getMedium() {
     medium = document.querySelector("#medium").value;
+    difficulty = 2;
     nbEssaisMax = 20;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return medium;
@@ -52,6 +55,7 @@ inputMedium.addEventListener("click", function (event) {
 
 function getHard() {
     hard = document.querySelector("#hard").value;
+    difficulty = 3;
     nbEssaisMax = 10;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return hard;
@@ -68,9 +72,10 @@ inputHard.addEventListener("click", function (event) {
 
 function getImpossible() {
     impossible = document.querySelector("#impossible").value;
+    difficulty = 4;
     nbEssaisMax = 15;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
-    alert = 999;
+    range = 999;
     random = getRandomInt(998);
     return impossible;
 }
@@ -82,7 +87,7 @@ inputImpossible.addEventListener("click", function (event) {
     last.style.display = "none";
     let news = document.querySelector("#iPlay");
     news.style.display = "block";
-    playNumber.innerHTML = "Saisissez un nombre entre 0 et 999.";
+    playNumber.innerHTML = "Saisissez un nombre entre 1 et 999.";
 });
 
 
@@ -90,37 +95,45 @@ inputImpossible.addEventListener("click", function (event) {
 export let random = getRandomInt(98);
 
 function getValue() {
-    return document.querySelector("#input").value;
+    return document.querySelector("#inputNumber").value;
 }
 
 function Verification() {
     let nbPropose = getValue();
 
-    if ((nbPropose < 100) && (nbPropose > 0)) {
+    if ((nbPropose < range) && (nbPropose > 0)) {
         nbEssais++;
-        
+
         if (nbPropose > random) {
             document.querySelector("#response").innerHTML = nbPropose + " est supérieur au nombre Mystère !";
         } else if (nbPropose < random) {
             document.querySelector("#response").innerHTML = nbPropose + " est inférieur au nombre Mystère !";
         } else if (nbPropose == random) {
-            document.querySelector("#response").innerHTML = "Félicitations ! Vous avez trouvé le nombre Mystère qui était : " + random + ".";
-            document.querySelector("#response").innerHTML += "<br>Vous avez trouvé en " + nbEssais + " essais !";
-
-            ButtonPropose.disabled = true;
-            document.querySelector(".pseudo").style.display = "block";
+            let news = document.querySelector("#iPlay");
+            news.style.display = "none";
+            let win = document.querySelector("#iWin");
+            win.style.display = "block";
+            document.querySelector("#numberMyst").innerHTML = random;
+            document.querySelector("#theEssai").innerHTML = nbEssais;
+            document.querySelector("#inputPseudo").value = "";
         }
-    } else if(nbEssais >= nbEssaisMax){
-        document.querySelector("#response").innerHTML = "Désolé ! Vous avez utilisé vos "+nbEssaisMax+" essais.<br>Vous n'avez pas trouvé le nombre Mystère qui était : " + random + ".";
+        
+        if (nbEssaisMax == nbEssais) {
+            let news = document.querySelector("#iPlay");
+            let lose = document.querySelector("#iLose");
+            news.style.display = "none";
+            lose.style.display = "block";
+        }
     } else {
-        alert("Votre nombre n'est pas compris entre 1 et "+alert+".");
+        alert("Votre nombre n'est pas compris entre 1 et " + range + ".");
     }
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
-
-    document.querySelector("#input").value = "";
+    console.log(nbEssais);
+    console.log(nbEssaisMax);
+    document.querySelector("#inputNumber").value = "";
 }
 
-const ButtonPropose = document.querySelector("#button");
+const ButtonPropose = document.querySelector("#submit");
 ButtonPropose.addEventListener("click", function (event) {
     Verification();
 });
@@ -130,9 +143,12 @@ function recupPseudo() {
     return pseudo;
 }
 
-const ButtonPseudo = document.querySelector("#buttonPseudo");
+const ButtonPseudo = document.querySelector("#submitPseudo");
 ButtonPseudo.addEventListener("click", function (event) {
-    document.querySelector(".pseudo").style.display = "none";
+    let score = document.querySelector("#iScore");
+    score.style.display = "block";
+    let win = document.querySelector("#iWin");
+    win.style.display = "none";
     recupPseudo();
     SaveClassement(`${pseudo}`, `${nbEssais}`, `${difficulty}`);
     Classement();
