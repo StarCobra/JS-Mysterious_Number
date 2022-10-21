@@ -6,14 +6,15 @@ function getRandomInt(max) {
     return Math.floor((Math.random() * max) + 1);
 }
 
-let nbEssais = 0;
+export let random
+let nbEssais;
 let nbEssaisMax;
 let pseudo;
 let easy;
 let medium;
 let hard;
 let impossible;
-let range = 99;
+let range;
 let playNumber = document.querySelector("#playNumber");
 let difficulty;
 
@@ -21,7 +22,10 @@ playNumber.innerHTML = "Saisissez un nombre entre 1 et 99.";
 
 function getEasy() {
     easy = document.querySelector("#easy").value;
+    random = getRandomInt(98);
     difficulty = 1;
+    range = 99;
+    nbEssais = 0;
     nbEssaisMax = 40;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return easy;
@@ -38,7 +42,10 @@ inputEasy.addEventListener("click", function (event) {
 
 function getMedium() {
     medium = document.querySelector("#medium").value;
+    random = getRandomInt(98);
     difficulty = 2;
+    range = 99;
+    nbEssais = 0;
     nbEssaisMax = 20;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return medium;
@@ -55,7 +62,10 @@ inputMedium.addEventListener("click", function (event) {
 
 function getHard() {
     hard = document.querySelector("#hard").value;
+    random = getRandomInt(98);
     difficulty = 3;
+    range = 99;
+    nbEssais = 0;
     nbEssaisMax = 10;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return hard;
@@ -72,11 +82,12 @@ inputHard.addEventListener("click", function (event) {
 
 function getImpossible() {
     impossible = document.querySelector("#impossible").value;
+    random = getRandomInt(998);
     difficulty = 4;
+    range = 999;
+    nbEssais = 0;
     nbEssaisMax = 15;
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
-    range = 999;
-    random = getRandomInt(998);
     return impossible;
 }
 
@@ -89,10 +100,6 @@ inputImpossible.addEventListener("click", function (event) {
     news.style.display = "block";
     playNumber.innerHTML = "Saisissez un nombre entre 1 et 999.";
 });
-
-
-
-export let random = getRandomInt(98);
 
 function getValue() {
     return document.querySelector("#inputNumber").value;
@@ -123,6 +130,7 @@ function Verification() {
             let lose = document.querySelector("#iLose");
             news.style.display = "none";
             lose.style.display = "block";
+            document.querySelector("#mysteriousNumber").innerHTML = random;
         }
     } else {
         alert("Votre nombre n'est pas compris entre 1 et " + range + ".");
@@ -160,3 +168,27 @@ function Classement() {
     let first = LoadClassement();
     classement.innerHTML = OrderClassement(first);
 }
+
+const ButtonScoreLose = document.querySelector("#displayScore");
+ButtonScoreLose.addEventListener("click", function (event) {
+    let score = document.querySelector("#iLose");
+    score.style.display = "none";
+    let difficult = document.querySelector("#iScore");
+    difficult.style.display = "block";
+});
+
+const ButtonRejouerLose = document.querySelector("#replayLose");
+ButtonRejouerLose.addEventListener("click", function (event) {
+    let score = document.querySelector("#iLose");
+    score.style.display = "none";
+    let difficult = document.querySelector("#iDifficult");
+    difficult.style.display = "block";
+});
+
+const ButtonRejouerScore = document.querySelector("#replayScore");
+ButtonRejouerScore.addEventListener("click", function (event) {
+    let score = document.querySelector("#iScore");
+    score.style.display = "none";
+    let difficult = document.querySelector("#iDifficult");
+    difficult.style.display = "block";
+});
