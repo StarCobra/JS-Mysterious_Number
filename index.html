@@ -31,8 +31,20 @@
         </div>
     </section>
 
-    <section id="iEnd">
-        <h3>/*A faire : afficher ici si le joueur a gagné ou perdu*/</h3>
+    <section id="iWin">
+        <h3>Félicitations ! Vous avez trouvé le nombre Mystère</h3>
+        <h2>*N*</h2>
+        <h3>Vous l'avez trouvé en *x* essais</h3>
+        <h3>Veuillez inscrire votre pseudo</h3>
+        <div>
+            <input id="inputPseudo" type="text" placeholder="Saisir un pseudo">
+            <input id="submitPseudo" type="button" value="Valider">
+        </div>
+    </section>
+
+    <section id="iLose">
+        <h3>Vous avez perdu :(</h3>
+        <h3>Le nombre mystère était : *N*</h3>
         <div>
             <input id="replay" type="button" value="Rejouer">
             <input id="displayScore" type="button" value="Afficher le classement">
