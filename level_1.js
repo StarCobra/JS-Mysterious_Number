@@ -192,3 +192,22 @@ ButtonRejouerScore.addEventListener("click", function (event) {
     let difficult = document.querySelector("#iDifficult");
     difficult.style.display = "block";
 });
+
+const ButtonReset = document.querySelector("#resetScore");
+ButtonReset.addEventListener("click", function (event) {
+    Clear();
+});
+
+const ButtonFind = document.querySelector("#findPlayer");
+ButtonFind.addEventListener("click", function (event) {
+    let score = document.querySelector("#iScore");
+    score.style.display = "none";
+    let difficult = document.querySelector("#iUser");
+    difficult.style.display = "block";
+});
+
+const ButtonFindUser = document.querySelector("#submitFindUser");
+ButtonFindUser.addEventListener("click", function (event) {
+    let user = document.querySelector("#inputFindUser");
+    document.querySelector("#responseFindUser").innerHTML = LoadJoueur(user);
+});
