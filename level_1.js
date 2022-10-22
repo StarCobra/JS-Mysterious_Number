@@ -27,6 +27,7 @@ function getEasy() {
     range = 99;
     nbEssais = 0;
     nbEssaisMax = 40;
+    document.querySelector("#response").innerHTML = "";
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return easy;
 }
@@ -47,6 +48,7 @@ function getMedium() {
     range = 99;
     nbEssais = 0;
     nbEssaisMax = 20;
+    document.querySelector("#response").innerHTML = "";
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return medium;
 }
@@ -67,6 +69,7 @@ function getHard() {
     range = 99;
     nbEssais = 0;
     nbEssaisMax = 10;
+    document.querySelector("#response").innerHTML = "";
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return hard;
 }
@@ -87,6 +90,7 @@ function getImpossible() {
     range = 999;
     nbEssais = 0;
     nbEssaisMax = 15;
+    document.querySelector("#response").innerHTML = "";
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
     return impossible;
 }
@@ -108,7 +112,7 @@ function getValue() {
 function Verification() {
     let nbPropose = getValue();
 
-    if ((nbPropose < range) && (nbPropose > 0)) {
+    if ((nbPropose <= range) && (nbPropose > 0)) {
         nbEssais++;
 
         if (nbPropose > random) {
@@ -124,7 +128,7 @@ function Verification() {
             document.querySelector("#theEssai").innerHTML = nbEssais;
             document.querySelector("#inputPseudo").value = "";
         }
-        
+
         if (nbEssaisMax == nbEssais) {
             let news = document.querySelector("#iPlay");
             let lose = document.querySelector("#iLose");
@@ -136,8 +140,6 @@ function Verification() {
         alert("Votre nombre n'est pas compris entre 1 et " + range + ".");
     }
     document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
-    console.log(nbEssais);
-    console.log(nbEssaisMax);
     document.querySelector("#inputNumber").value = "";
 }
 
@@ -159,15 +161,24 @@ ButtonPseudo.addEventListener("click", function (event) {
     win.style.display = "none";
     recupPseudo();
     SaveClassement(`${pseudo}`, `${nbEssais}`, `${difficulty}`);
+    document.querySelector("#leaderboard").innerHTML = "";
     Classement();
 });
 
-let classement = document.querySelector("#classement")
 
 function Classement() {
     let first = LoadClassement();
-    classement.innerHTML = OrderClassement(first);
+    OrderClassement(first);
+    for (let i = 0; i < 10; i++) {
+        document.querySelector("#leaderboard").innerHTML += "<li>" + first[i] + "</li>";
+    }
 }
+
+const leader = document.querySelector("#displayScore");
+leader.addEventListener("click", function () {
+    document.querySelector("#leaderboard").innerHTML = "";
+    Classement();
+})
 
 const ButtonScoreLose = document.querySelector("#displayScore");
 ButtonScoreLose.addEventListener("click", function (event) {
@@ -196,6 +207,7 @@ ButtonRejouerScore.addEventListener("click", function (event) {
 const ButtonReset = document.querySelector("#resetScore");
 ButtonReset.addEventListener("click", function (event) {
     Clear();
+    document.querySelector("#leaderboard").innerHTML = "";
 });
 
 const ButtonFind = document.querySelector("#findPlayer");
