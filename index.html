@@ -26,7 +26,7 @@
         <h3 id="playNumber"></h3>
         <h3>Nombre d'essais restants : <span id="essaiRestant"></span>.</h3>
         <div>
-            <input id="inputNumber" type="number" inputmode="numeric" min="0" max="99" placeholder="Saisir un nombre">
+            <input id="inputNumber" type="number" inputmode="numeric" min="1" max="99" placeholder="Saisir un nombre">
             <input id="submit" type="button" value="Valider !">
             <div id="response"></div>
         </div>
@@ -68,6 +68,13 @@
             <input id="inputFindUser" type="text" placeholder="Saisir un pseudo">
             <input id="submitFindUser" type="button" value="Valider !">
             <div id="responseFindUser"></div>
+        </div>
+    </section>
+    <section id="iResetValidation">
+        <h3>Etes-vous sur de vouloir reset le leaderboard ?</h3>
+        <div id="iFlexResetValidation">
+            <input id="resetValidation" type="button" value="Valider">
+            <input id="resetAnnulation" type="button" value="Annuler">
         </div>
     </section>
     <script type="module" src="level_1.js"></script>

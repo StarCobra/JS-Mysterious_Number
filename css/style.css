@@ -77,3 +77,17 @@ input[type=number]:focus, input[type=text]:focus{
 #iUser{
     display: none;
 }
+#iResetValidation{
+    display: none;
+}
+#iFlexResetValidation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#resetValidation{
+    background-color: red;
+}
+#resetAnnulation{
+    background-color: green;
+}

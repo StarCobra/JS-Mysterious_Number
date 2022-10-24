@@ -39,6 +39,7 @@ inputEasy.addEventListener("click", function (event) {
     last.style.display = "none";
     let news = document.querySelector("#iPlay");
     news.style.display = "block";
+    playNumber.innerHTML = "Saisissez un nombre entre 1 et 99.";
 });
 
 function getMedium() {
@@ -60,6 +61,7 @@ inputMedium.addEventListener("click", function (event) {
     last.style.display = "none";
     let news = document.querySelector("#iPlay");
     news.style.display = "block";
+    playNumber.innerHTML = "Saisissez un nombre entre 1 et 99.";
 });
 
 function getHard() {
@@ -81,6 +83,7 @@ inputHard.addEventListener("click", function (event) {
     last.style.display = "none";
     let news = document.querySelector("#iPlay");
     news.style.display = "block";
+    playNumber.innerHTML = "Saisissez un nombre entre 1 et 99.";
 });
 
 function getImpossible() {
@@ -208,9 +211,29 @@ ButtonRejouerScore.addEventListener("click", function (event) {
 
 const ButtonReset = document.querySelector("#resetScore");
 ButtonReset.addEventListener("click", function (event) {
+    let score = document.querySelector("#iScore");
+    score.style.display = "none";
+    let difficult = document.querySelector("#iResetValidation");
+    difficult.style.display = "block";
+});
+
+const ButtonResetValidation = document.querySelector("#resetValidation");
+ButtonResetValidation.addEventListener("click", function (event) {
+    let score = document.querySelector("#iScore");
+    score.style.display = "block";
+    let difficult = document.querySelector("#iResetValidation");
+    difficult.style.display = "none";
     Clear();
     document.querySelector("#leaderboard").innerHTML = "";
-});
+})
+
+const ButtonResetAnnulation = document.querySelector("#resetAnnulation");
+ButtonResetAnnulation.addEventListener("click", function (event) {
+    let score = document.querySelector("#iScore");
+    score.style.display = "block";
+    let difficult = document.querySelector("#iResetValidation");
+    difficult.style.display = "none";
+})
 
 const ButtonFind = document.querySelector("#findPlayer");
 ButtonFind.addEventListener("click", function (event) {
