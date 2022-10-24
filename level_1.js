@@ -170,7 +170,9 @@ function Classement() {
     let first = LoadClassement();
     OrderClassement(first);
     for (let i = 0; i < 10; i++) {
-        document.querySelector("#leaderboard").innerHTML += "<li>" + first[i] + "</li>";
+        if(first[i] != undefined) {
+            document.querySelector("#leaderboard").innerHTML += "<li>" + first[i] + "</li>";
+        }
     }
 }
 
