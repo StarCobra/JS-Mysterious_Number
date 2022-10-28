@@ -10,7 +10,7 @@ A ces fins de multiples fonctions ont été créer :
 
 ### --- Stockage et Tri du Classement ---
 
-   ***SaveClassement(Pseudo,NbEssais,Difficulté=3)*** : Sauvegarde une entrée de classement contenant le pseudo, le nombre d'essais pris pour trouver ainsi que la difficulté à laquelle la partie a été faite (pour tant que l'on a pas géré cela, j'ai mis une valeur par défaut de 3). Le tout est mis à l'indice équivalent au Pseudo du Joueur (Cepandant cela empêche un joueur de prendre plusieurs spots sur le classement). Les différentes données sont séparé par '|'.
+   ***SaveClassement(Pseudo,NbEssais,Difficulté=3)*** : Sauvegarde une entrée de classement contenant le pseudo, le nombre d'essais pris pour trouver ainsi que la difficulté à laquelle la partie a été faite (pour tant que l'on a pas géré cela, j'ai mis une valeur par défaut de 3). Le tout est mis à l'indice équivalent au Pseudo du Joueur (Cepandant cela empêche un joueur de prendre plusieurs spots sur le classement). Les différentes données sont séparé par '|'. Quand la fonction se retrouverais à écraser une donnée du à une problème de pseudo identique, alors cette fonction n'acompliera pas l'enregistrement et renverra **false**. Dans le cas contraire, la fonction se déroulera bien et renverra **true**.
 
    *LoadJoueur(Pseudo)* : Cette fonction utilisé en interne permet de load un joueur spécifique avec son pseudo. Le rendu est une chaine de caractère non traitée.
 
