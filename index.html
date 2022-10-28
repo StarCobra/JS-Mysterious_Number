@@ -8,6 +8,11 @@
     <title>JS Mysterious Number</title>
 </head>
 <body>
+    <div id="gradient1"></div>
+    <div id="gradient2"></div>
+    <audio id="son" controls loop preload autoplay>
+        <source src="src/kahoot_music.mp3" type="audio/mpeg">
+    </audio>
 
     <h1>Bienvenue au jeu du <em>Mysterious Number</em></h1>
     <h2>Le jeu où tu dois deviner le nombre caché</h2>
@@ -20,6 +25,12 @@
             <input id="hard" type="button" value="Difficile">
             <input id="impossible" type="button" value="Impossible">
         </div>
+        <div>
+            <h4>Classement</h4>
+            <ol id="leaderboard">
+            </ol>
+            <input id="displayScore" type="button" value="Voir plus">
+        </div>
     </section>
     
     <section id="iPlay">
@@ -30,12 +41,14 @@
             <input id="submit" type="button" value="Valider !">
             <div id="response"></div>
         </div>
+        <img src="src/dino_play.gif" alt="gif" width="180px">
     </section>
 
     <section id="iWin">
         <h3>Félicitations ! Vous avez trouvé le nombre Mystère !</h3>
         <h2 id="numberMyst"></h2>
         <h3>Vous l'avez trouvé en <span id="theEssai"></span> essais !</h3>
+        <img src="src/dino_win.gif" alt="gif" width="180px">
         <h3>Veuillez inscrire votre pseudo :</h3>
         <div class="pseudo">
             <input id="inputPseudo" type="text" placeholder="Saisir un pseudo">
@@ -46,6 +59,7 @@
     <section id="iLose">
         <h3>Vous avez perdu :( !</h3>
         <h3>Le nombre mystère était : <span id="mysteriousNumber"></span> !</h3>
+        <img src="src/dino_lose.gif" alt="gif" width="180px">
         <div>
             <input id="replayLose" type="button" value="Rejouer">
             <input id="displayScore" type="button" value="Afficher le classement">
@@ -56,6 +70,7 @@
         <h3>Classement TOP 10 :</h3>
         <ol id="leaderboard">
         </ol>
+        <img src="src/dino_score.gif" alt="gif" width="180px">
         <div>
             <input id="replayScore" type="button" value="Rejouer">
             <input id="resetScore" type="button" value="Réinitialiser le classement">

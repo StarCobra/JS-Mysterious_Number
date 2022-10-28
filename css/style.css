@@ -10,8 +10,13 @@ html, body, div, span{
     font-size: 100%;
 }
 
-h1, h2, h3{
+h1, h2, h3, h4{
     text-align: center;
+    z-index: 2;
+}
+section{
+    z-index: 2;
+    overflow:initial;
 }
 
 body{
@@ -23,6 +28,83 @@ body{
     background-color: #46178f;
     color: white;
     font-family: 'Montserrat', Arial, sans-serif;
+    overflow: hidden;
+}
+
+#gradient1{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    left: -20%;
+    top: -40%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(23,143,70,1) 0%, rgba(23,143,70,0) 60%);
+    z-index: -1;
+    animation: gradient1 6s ease infinite;
+}
+
+@keyframes gradient1{
+    0% {
+        left: -20%;
+        top: -40%;
+	}
+    25%{
+        left: 60%;
+        top: -40%;
+    }
+	50% {
+		left: -20%;
+        top: 50%;
+	}
+    75%{
+        left: 60%;
+        top: 50%;
+    }
+	100% {
+		left: -20%;
+        top: -40%;
+	}
+}
+
+#gradient2{
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(143,70,23,1) 0%, rgba(143,70,23,0) 60%);
+    z-index: -1;
+    animation: gradient2 10s ease infinite;
+}
+
+@keyframes gradient2{
+    0% {
+        left: 50%;
+        top: 50%;
+	}
+    25%{
+        left: 10%;
+        top: 50%;
+    }
+	50% {
+		left: 10%;
+        top: -10%;
+	}
+    75%{
+        left: 50%;
+        top: -10%;
+    }
+	100% {
+		left: 50%;
+        top: 50%;
+	}
+}
+
+audio {
+    display: none;
 }
 div{
     display: flex;
@@ -62,14 +144,57 @@ input[type=number]:focus, input[type=text]:focus{
 #iDifficult{
     display: block;
 }
+#iDifficult div:nth-child(2){
+    float: left;
+    margin-right: 7em;
+}
+#iDifficult div:last-child{
+    margin-top: 34px;
+}
 #iPlay{
     display: none;
+}
+#iPlay img{
+    position: absolute;
+    transform: scaleX(1);
+    right: 1%;
+    animation-name: dino_play;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes dino_play{
+    from {
+        right: 1%;
+        transform: scaleX(1);
+    }
+    49% {
+        transform: scaleX(1);
+    }
+    50% {
+        right: calc(100% - 200px);
+    }
+    51% {
+        transform: scaleX(-1);
+    }
+    99%{
+        transform: scaleX(-1);
+    }
+    to {
+        right: 1%;
+        transform: scaleX(1);
+    }
 }
 #iWin{
     display: none;
 }
+#iWin img{
+    margin-left: calc(70% - 180px);
+}
 #iLose{
     display: none;
+}
+#iLose img, #iScore img{
+    margin-left: calc(84% - 180px);
 }
 #iScore{
     display: none;
