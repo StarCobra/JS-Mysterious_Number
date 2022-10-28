@@ -169,15 +169,32 @@ ButtonPseudo.addEventListener("click", function (event) {
 });
 
 
+
 function Classement() {
     let first = LoadClassement();
     OrderClassement(first);
+    console.log(OrderClassement);
     for (let i = 0; i < 10; i++) {
         if(first[i] != undefined) {
-            document.querySelector("#leaderboard").innerHTML += "<li>" + first[i] + "</li>";
+            document.querySelector("#leaderboard").innerHTML += "<li>" + (i + 1) + "ème place : " +first[i][1] + " avec un score de " + Score(first[i]) + ".</li>";
         }
     }
 }
+
+function ClassementGeneral() {
+    let first = LoadClassement();
+    OrderClassement(first);
+    console.log(OrderClassement);
+    i = 1;
+    first.forEach((u) => {
+        if(first[i] != undefined) {
+            document.querySelector("#leaderboard").innerHTML += "<li>" + i + "ème place : " +first[i][1] + " avec un score de " + Score(first[i]) + "</li>";
+            i ++;
+        }
+    })
+}
+
+
 
 const leader = document.querySelector("#displayScore");
 leader.addEventListener("click", function () {
@@ -255,4 +272,6 @@ ButtonRetourScore.addEventListener("click", function (event) {
     score.style.display = "block";
     let difficult = document.querySelector("#iUser");
     difficult.style.display = "none";
+    document.querySelector("#inputFindUser").value = "";
+    document.querySelector("#responseFindUser").innerHTML = "";
 });

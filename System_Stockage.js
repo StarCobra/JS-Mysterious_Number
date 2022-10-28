@@ -2,8 +2,13 @@ import { random } from './level_1.js';
 
 export function SaveClassement(Pseudo, NbEssais, difficulty) {
 	if(!difficulty) {difficulty = 2;}
-	var Data = random + "|" + Pseudo + "|" + NbEssais + "|" + difficulty;
-	localStorage.setItem(Pseudo, Data);
+	if (LoadJoueur(Pseudo) == null) {
+		var Data = random + "|" + Pseudo + "|" + NbEssais + "|" + difficulty;
+		localStorage.setItem(Pseudo, Data);
+		return true;
+	} else {
+		return false;
+	}
 }
 
 export function LoadJoueur(Pseudo) {
@@ -34,11 +39,11 @@ export function Order(a, b) {
 	// Test de calcul de score
 	//console.log("score a ("+a[1]+") = "+(((20-a[3])*a[2])));
 	//console.log("score b ("+b[1]+") = "+((20-b[3])*b[2]));
-	return Score(a) - Score(b);
+	return Score(b) - Score(a);
 }
 
 export function Score(a) {
-	return ((20 - a[3]) * a[2]);
+	return (((20 - a[2]) * a[3]));
 }
 
 //Rend les joueurs par ordre de classement (indice 0 = plus faible; indice 1 < indice 2)
