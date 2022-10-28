@@ -43,7 +43,7 @@ export function Order(a, b) {
 }
 
 export function Score(a) {
-	return ((20 - a[3]) * a[2]);
+	return (((20 - a[2]) * a[3]));
 }
 
 //Rend les joueurs par ordre de classement (indice 0 = plus faible; indice 1 < indice 2)
