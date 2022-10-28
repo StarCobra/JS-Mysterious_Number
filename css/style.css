@@ -216,3 +216,16 @@ input[type=number]:focus, input[type=text]:focus{
 #resetAnnulation{
     background-color: green;
 }
+
+
+ol {
+    list-style: none;
+}
+#displayRetourHome{
+    display: none;
+}
+#iTitreJeu{
+    background-color: transparent;
+    width: 80%;
+    color: white;  
+}

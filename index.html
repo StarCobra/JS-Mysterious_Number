@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,20 @@
     <link rel="stylesheet" href="css/style.css">
     <title>JS Mysterious Number</title>
 </head>
+
 <body>
     <div id="gradient1"></div>
     <div id="gradient2"></div>
     <audio id="son" controls loop preload autoplay>
         <source src="src/kahoot_music.mp3" type="audio/mpeg">
     </audio>
-
-    <h1>Bienvenue au jeu du <em>Mysterious Number</em></h1>
-    <h2>Le jeu où tu dois deviner le nombre caché</h2>
-
+    <div id="iTitreJeu">
+        <h1>Bienvenue au jeu du <em>Mysterious Number</em></h1>
+        <h2>Le jeu où tu dois deviner le nombre caché</h2>
+    </div>
     <section id="iDifficult">
-        <h3>Choisissez un niveau</h3>
-        <div>
+        <h3 id="iDifficultTexte">Choisissez un niveau</h3>
+        <div id="iDifficultChoice">
             <input id="easy" type="button" value="Facile">
             <input id="medium" type="button" value="Moyen">
             <input id="hard" type="button" value="Difficile">
@@ -29,10 +31,11 @@
             <h4>Classement</h4>
             <ol id="leaderboard">
             </ol>
-            <input id="displayScore" type="button" value="Voir plus">
+            <input id="displayScoreHome" type="button" value="Voir plus">
+            <input id="displayRetourHome" type="button" value="Retour">
         </div>
     </section>
-    
+
     <section id="iPlay">
         <h3 id="playNumber"></h3>
         <h3>Nombre d'essais restants : <span id="essaiRestant"></span>.</h3>
@@ -65,7 +68,7 @@
             <input id="displayScore" type="button" value="Afficher le classement">
         </div>
     </section>
-    
+
     <section id="iScore">
         <h3>Classement TOP 10 :</h3>
         <ol id="leaderboard">
@@ -95,4 +98,5 @@
     </section>
     <script type="module" src="level_1.js"></script>
 </body>
+
 </html>
