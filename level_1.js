@@ -20,15 +20,21 @@ let difficulty;
 
 playNumber.innerHTML = "Saisissez un nombre entre 1 et 99.";
 
+function resetAllValeur() {
+    nbEssais = 0;
+    document.querySelector("#response").innerHTML = "";
+    document.querySelector("#inputFindUser").value = "";
+    document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
+    document.querySelector("#responseFindUser").innerHTML = "";
+}
+
 function getEasy() {
     easy = document.querySelector("#easy").value;
     random = getRandomInt(98);
     difficulty = 1;
     range = 99;
-    nbEssais = 0;
     nbEssaisMax = 40;
-    document.querySelector("#response").innerHTML = "";
-    document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
+    resetAllValeur()
     return easy;
 }
 
@@ -47,10 +53,8 @@ function getMedium() {
     random = getRandomInt(98);
     difficulty = 2;
     range = 99;
-    nbEssais = 0;
     nbEssaisMax = 20;
-    document.querySelector("#response").innerHTML = "";
-    document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
+    resetAllValeur()
     return medium;
 }
 
@@ -69,10 +73,8 @@ function getHard() {
     random = getRandomInt(98);
     difficulty = 3;
     range = 99;
-    nbEssais = 0;
     nbEssaisMax = 10;
-    document.querySelector("#response").innerHTML = "";
-    document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
+    resetAllValeur()
     return hard;
 }
 
@@ -91,10 +93,8 @@ function getImpossible() {
     random = getRandomInt(998);
     difficulty = 4;
     range = 999;
-    nbEssais = 0;
     nbEssaisMax = 15;
-    document.querySelector("#response").innerHTML = "";
-    document.querySelector("#essaiRestant").innerHTML = (nbEssaisMax - nbEssais);
+    resetAllValeur();
     return impossible;
 }
 
@@ -245,6 +245,14 @@ ButtonFind.addEventListener("click", function (event) {
 
 const ButtonFindUser = document.querySelector("#submitFindUser");
 ButtonFindUser.addEventListener("click", function (event) {
-    let user = document.querySelector("#inputFindUser");
+    let user = document.querySelector("#inputFindUser").value;
     document.querySelector("#responseFindUser").innerHTML = LoadJoueur(user);
+});
+
+const ButtonRetourScore = document.querySelector("#displayRetourScore");
+ButtonRetourScore.addEventListener("click", function (event) {
+    let score = document.querySelector("#iScore");
+    score.style.display = "block";
+    let difficult = document.querySelector("#iUser");
+    difficult.style.display = "none";
 });
