@@ -39,7 +39,7 @@ export function Order(a, b) {
 	// Test de calcul de score
 	//console.log("score a ("+a[1]+") = "+(((20-a[3])*a[2])));
 	//console.log("score b ("+b[1]+") = "+((20-b[3])*b[2]));
-	return Score(a) - Score(b);
+	return Score(b) - Score(a);
 }
 
 export function Score(a) {
