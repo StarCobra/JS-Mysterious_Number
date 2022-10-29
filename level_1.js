@@ -194,7 +194,7 @@ function Classement() {
 
     for (let i = 0; i < 10; i++) {
         if (first[i] != undefined) {
-            document.querySelector("#leaderboard").innerHTML += "<li>" + (i + 1) + "ème place : " + first[i][1] + " avec un score de " + Score(first[i]) + ".</li>";
+            document.querySelector("#leaderboard2").innerHTML += "<li>" + (i + 1) + "ème place : " + first[i][1] + " avec un score de " + Score(first[i]) + ".</li>";
         }
     }
 }
@@ -204,7 +204,7 @@ function ClassementGeneral() {
 
     OrderClassement(first);
 
-    i = 1;
+    let i = 1;
     first.forEach((u) => {
 
         if (first[i] != undefined) {
@@ -279,7 +279,7 @@ ButtonResetValidation.addEventListener("click", function (event) {
 
     Clear();
 
-    document.querySelector("#leaderboard").innerHTML = "";
+    document.querySelector("#leaderboard2").innerHTML = "";
 })
 
 const ButtonResetAnnulation = document.querySelector("#resetAnnulation");
