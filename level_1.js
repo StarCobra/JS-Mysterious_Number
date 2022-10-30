@@ -182,7 +182,7 @@ function initClassement() {
 
     for (let i = 0; i < 5; i++) {
         if (first[i] != undefined) {
-            document.querySelector("#leaderboard").innerHTML += "<li>" + (i + 1) + "ème place : " + first[i][1] + " avec un score de " + Score(first[i]) + ".</li>";
+            document.querySelector("#leaderboard").innerHTML += "<li><strong>" + first[i][1] + "</strong> avec un score de <strong>" + Score(first[i]) + "</strong></li>";
         }
     }
 }
@@ -194,7 +194,7 @@ function Classement() {
 
     for (let i = 0; i < 10; i++) {
         if (first[i] != undefined) {
-            document.querySelector("#leaderboard2").innerHTML += "<li>" + (i + 1) + "ème place : " + first[i][1] + " avec un score de " + Score(first[i]) + ".</li>";
+            document.querySelector("#leaderboard2").innerHTML += "<li><strong>" + first[i][1] + "</strong> avec un score de <strong>" + Score(first[i]) + "</strong></li>";
         }
     }
 }
@@ -208,7 +208,7 @@ function ClassementGeneral() {
     first.forEach((u) => {
 
         if (first[i] != undefined) {
-            document.querySelector("#leaderboard").innerHTML += "<li>" + i + "ème place : " + first[i][1] + " avec un score de " + Score(first[i]) + "</li>";
+            document.querySelector("#leaderboard").innerHTML += "<li><strong>" + first[i][1] + "</strong> avec un score de <strong>" + Score(first[i]) + "</strong></li>";
             i++;
         }
     })

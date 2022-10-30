@@ -12,8 +12,8 @@
 <body>
     <div id="gradient1"></div>
     <div id="gradient2"></div>
-    <audio id="son" controls loop preload autoplay>
-        <source src="src/kahoot_music.mp3" type="audio/mpeg">
+    <audio id="son" loop autoplay>
+        <source src="src/kahoot_music.mp3" type="audio/mp3">
     </audio>
     <div id="iTitreJeu">
         <h1>Bienvenue au jeu du <em>Mysterious Number</em></h1>
@@ -44,14 +44,14 @@
             <input id="submit" type="button" value="Valider !">
             <div id="response"></div>
         </div>
-        <img src="src/dino_play.gif" alt="gif" width="180px">
+        <img draggable="false" src="src/dino_play.gif" alt="gif">
     </section>
 
     <section id="iWin">
         <h3>Félicitations ! Vous avez trouvé le nombre Mystère !</h3>
         <h2 id="numberMyst"></h2>
         <h3>Vous l'avez trouvé en <span id="theEssai"></span> essais !</h3>
-        <img src="src/dino_win.gif" alt="gif" width="180px">
+        <img draggable="false" src="src/dino_win.gif" alt="gif">
         <h3>Veuillez inscrire votre pseudo :</h3>
         <div class="pseudo">
             <input id="inputPseudo" type="text" placeholder="Saisir un pseudo">
@@ -62,7 +62,7 @@
     <section id="iLose">
         <h3>Vous avez perdu :( !</h3>
         <h3>Le nombre mystère était : <span id="mysteriousNumber"></span> !</h3>
-        <img src="src/dino_lose.gif" alt="gif" width="180px">
+        <img draggable="false" src="src/dino_lose.gif" alt="gif">
         <div>
             <input id="replayLose" type="button" value="Rejouer">
             <input id="displayScore" type="button" value="Afficher le classement">
@@ -71,11 +71,11 @@
 
     <section id="iScore">
         <div>
-            <h3>Classement TOP 10 :</h3>
+            <h3>Classement TOP 10</h3>
             <ol id="leaderboard2">
             </ol>
         </div>
-        <img src="src/dino_score.gif" alt="gif" width="180px">
+        <img draggable="false" src="src/dino_score.gif" alt="gif">
         <div>
             <input id="replayScore" type="button" value="Rejouer">
             <input id="resetScore" type="button" value="Réinitialiser le classement">
@@ -83,8 +83,11 @@
         </div>
     </section>
     <section id="iUser">
-        <h3>Rechercher un joueur :</h3>
+        <h3>Rechercher un joueur</h3>
         <div id="responseFindUser"></div>
+        <h4>Description du résultat</h4>
+        <p>nombre trouvé | pseudo | nombre essais | <span
+                title="1=Facile, 2=Moyen, 3=Difficile, 4=Impossible">difficulté</span></p>
         <div class="findUser">
             <input id="inputFindUser" type="text" placeholder="Saisir un pseudo">
             <input id="submitFindUser" type="button" value="Valider !">
