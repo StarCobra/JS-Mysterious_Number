@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 *{
     box-sizing: border-box;
@@ -15,10 +15,15 @@ html, body, div, span{
 h1, h2, h3, h4{
     text-align: center;
     z-index: 2;
+    font-weight: 600;
 }
 h1{
     margin: 0 auto;
+    font-weight: 800;
+    font-size: 2.4em;
+    font-style: italic;
 }
+
 section{
     z-index: 2;
     overflow:initial;
@@ -37,8 +42,8 @@ body{
 }
 
 #gradient1{
-    width: 1000px;
-    height: 1000px;
+    width: 900px;
+    height: 900px;
     position: absolute;
     left: -20%;
     top: -40%;
@@ -73,8 +78,8 @@ body{
 }
 
 #gradient2{
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -116,28 +121,41 @@ div{
     color: #222222;
     margin: 16px auto;
     text-align: center;
-    width: 300px;
+    width: 320px;
 }
 img{
     max-width: 160px;
 }
 input{
     padding: 0.75em;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 16px;
     margin: 1em;
 }
 input[type=button]{
-    background-color: #333333;
+    position: relative;
+    display: inline-block;
+    background: #5b5b5b;
+    box-shadow: 0 5px #333333;
     color: white;
-    border: #333333 solid 2px;
-    transition: all 0.2s ease 0.1s;
+    border: none;
+    transition: all 0.3s ease;
     cursor: pointer;
+    outline: none;
+    font-weight: bold;
 }
 input[type=button]:hover{
-    background-color: white;
-    color: #333333;
+    box-shadow: 0 3px #333333;
+    top: 1px;
 }
+input[type=button]:active {
+    box-shadow: 0 3px #333333;
+    top: 5px;
+}
+
+
+  
+
 input[type=number],input[type=text]{
     border: gray solid 2px;
 }
@@ -210,7 +228,7 @@ input[type=number]:focus, input[type=text]:focus{
     scrollbar-color: #333333 none;
     scrollbar-width: thin;
     scroll-behavior: smooth;
-    margin-bottom: 0;
+    margin-bottom: 12px;
 }
 
 #iDifficultScore ol{
@@ -266,4 +284,25 @@ li{
 }
 #responseFindUser{
     padding: 5%;
+}
+
+@media screen and (max-width: 960px){
+    #gradient1, #gradient2{
+        display: none;
+    }
+    body{
+        overflow: initial;
+    }
+}
+@media screen and (max-width: 800px){
+    #iDifficult div:nth-child(2) {
+        float: unset;
+        margin-right: 0;
+    }
+    #iTitreJeu{
+        width: auto;
+    }
+    h1{
+        font-size: 2em;
+    }
 }
