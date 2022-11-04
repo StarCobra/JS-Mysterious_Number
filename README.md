@@ -13,4 +13,4 @@ Etudiant en Licence Professionnelle CIASIE.
 Créateurs : 
   Front-end & web designer : Léo SIX (leosix10).
   Full stack : Damien POIROT (StarCobra) et Waïl ZIDANE (Vigelos0).
-  Back-end : Hugo REZLER (StrixOfTheWeb).
+  Back-end : Hugo REZLER (StrixOfTheWeb).s
