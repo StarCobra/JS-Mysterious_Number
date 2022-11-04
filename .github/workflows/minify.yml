@@ -56,4 +56,3 @@ jobs:
       - run: sudo apt install npm
       - run: npm i minify -g
       - run: minify ./index.html
-      - run: npm run deploy
