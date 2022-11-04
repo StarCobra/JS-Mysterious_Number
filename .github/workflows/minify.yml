@@ -54,5 +54,5 @@ jobs:
         with:
           node-version: '12'
       - run: sudo apt install npm
-      - run: npm i minify
-      - run: minify index.html
+      - run: npm i minify -g
+      - run: minify ./index.html
