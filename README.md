@@ -10,7 +10,7 @@ Page du site : https://starcobra.github.io/JS-Mysterious_Number/
 
 Etudiant en Licence Professionnelle CIASIE.
 
-Créateurs : 
+__Créateurs__
 
   Front-end & web designer : Léo SIX (leosix10).
 
