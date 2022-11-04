@@ -1,4 +1,4 @@
-import { random } from './level_1.js';
+import { random } from './index.js';
 
 export function SaveClassement(Pseudo, NbEssais, difficulty) {
 	if(!difficulty) {difficulty = 2;}
