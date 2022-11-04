@@ -6,7 +6,7 @@ Ce jeu contient un système de classement avec un score calculé avec le nombre 
 
 Bonne chance à vous et amusez vous sur Mysterious Number ! 
 
-Page du site : https://starcobra.github.io/JS-Mysterious_Number/.
+Page du site : https://starcobra.github.io/JS-Mysterious_Number/
 
 Etudiant en Licence Professionnelle CIASIE.
 
