@@ -53,5 +53,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '12'
+      - run: apt install npm
       - run: npm i minify
       - run: minify index.html
