@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+html, body, div, span{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+h1, h2, h3, h4{
+    text-align: center;
+    z-index: 2;
+    font-weight: 600;
+}
+h1{
+    margin: 0 auto;
+    font-weight: 800;
+    font-size: 2.4em;
+    font-style: italic;
+}
+
+section{
+    z-index: 2;
+    overflow:initial;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #46178f;
+    color: white;
+    font-family: 'Montserrat', Arial, sans-serif;
+    overflow: hidden;
+}
+
+#gradient1{
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    left: -20%;
+    top: -40%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(23,143,70,1) 0%, rgba(23,143,70,0) 60%);
+    z-index: -1;
+    animation: gradient1 6s ease infinite;
+}
+
+@keyframes gradient1{
+    0% {
+        left: -20%;
+        top: -40%;
+	}
+    25%{
+        left: 60%;
+        top: -40%;
+    }
+	50% {
+		left: -20%;
+        top: 50%;
+	}
+    75%{
+        left: 60%;
+        top: 50%;
+    }
+	100% {
+		left: -20%;
+        top: -40%;
+	}
+}
+
+#gradient2{
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(143,70,23,1) 0%, rgba(143,70,23,0) 60%);
+    z-index: -1;
+    animation: gradient2 10s ease infinite;
+}
+
+@keyframes gradient2{
+    0% {
+        left: 50%;
+        top: 50%;
+	}
+    25%{
+        left: 10%;
+        top: 50%;
+    }
+	50% {
+		left: 10%;
+        top: -10%;
+	}
+    75%{
+        left: 50%;
+        top: -10%;
+    }
+	100% {
+		left: 50%;
+        top: 50%;
+	}
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: white;
+    color: #222222;
+    margin: 16px auto;
+    text-align: center;
+    width: 320px;
+}
+img{
+    max-width: 160px;
+}
+input{
+    padding: 0.75em;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 1em;
+}
+input[type=button]{
+    position: relative;
+    display: inline-block;
+    background: #5b5b5b;
+    box-shadow: 0 5px #333333;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+input[type=button]:hover{
+    box-shadow: 0 3px #333333;
+    top: 1px;
+}
+input[type=button]:active {
+    box-shadow: 0 3px #333333;
+    top: 5px;
+}
+
+
+  
+
+input[type=number],input[type=text]{
+    border: gray solid 2px;
+}
+input[type=number]:focus, input[type=text]:focus{
+    outline: none;
+    border: #333333 solid 2px;
+}
+
+#iDifficult{
+    display: block;
+}
+#iDifficult div:nth-child(2){
+    float: left;
+    margin-right: 7em;
+}
+#iDifficult div:last-child{
+    margin-top: 34px;
+}
+#iPlay{
+    display: none;
+}
+#iPlay img{
+    position: absolute;
+    transform: scaleX(1);
+    right: 1%;
+    animation-name: dino_play;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes dino_play{
+    from {
+        right: 1%;
+        transform: scaleX(1);
+    }
+    49% {
+        transform: scaleX(1);
+    }
+    50% {
+        right: calc(100% - 200px);
+    }
+    51% {
+        transform: scaleX(-1);
+    }
+    99%{
+        transform: scaleX(-1);
+    }
+    to {
+        right: 1%;
+        transform: scaleX(1);
+    }
+}
+#iWin{
+    display: none;
+}
+#iWin img{
+    margin-left: 34%;
+}
+#iLose{
+    display: none;
+}
+#iLose img, #iScore img{
+    margin-left: 25%;
+}
+#iScore{
+    display: none;
+} 
+#iScore ol, #iDifficultScore ol{
+    overflow-y: scroll;
+    max-height: 150px;
+    scrollbar-color: #333333 none;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    margin-bottom: 12px;
+}
+
+#iDifficultScore ol{
+    max-height: 450px;
+}
+
+ol::-webkit-scrollbar-track {
+    background-color: none;
+}
+
+ol::-webkit-scrollbar {
+    width: 10px;
+    background-color: none;
+}
+
+ol::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 5px;
+}
+#iUser{
+    display: none;
+}
+#iResetValidation{
+    display: none;
+}
+#iFlexResetValidation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#resetValidation{
+    background-color: red;
+}
+#resetAnnulation{
+    background-color: green;
+}
+
+ol{
+    padding-right: 16px;
+    margin-top: 0;
+}
+li{
+    text-align: left;
+}
+
+#displayRetourHome{
+    display: none;
+}
+#iTitreJeu{
+    background-color: transparent;
+    width: 80%;
+    color: white;  
+}
+#responseFindUser{
+    padding: 5%;
+}
+
+@media screen and (max-width: 960px){
+    #gradient1, #gradient2{
+        display: none;
+    }
+    body{
+        overflow: initial;
+    }
+}
+@media screen and (max-width: 800px){
+    #iDifficult div:nth-child(2) {
+        float: unset;
+        margin-right: 0;
+    }
+    #iTitreJeu{
+        width: auto;
+    }
+    h1{
+        font-size: 2em;
+    }
+}
