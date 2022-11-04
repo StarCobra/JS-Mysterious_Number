@@ -46,13 +46,13 @@ jobs:
         echo "Log level: ${{ github.event.inputs.logLevel }}"
         echo "Tags: ${{ github.event.inputs.tags }}"
         
-  check-bats-version:
+  minify-files-action:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: '16'
       - run: sudo apt install npm
       - run: npm i minify -g
       - run: minify ./index.html
