@@ -11,7 +11,7 @@ Page du site : https://starcobra.github.io/JS-Mysterious_Number/
 Etudiant en Licence Professionnelle CIASIE.
 
 
-
+Developpeur
 **Front-end & web designer :** Léo SIX (leosix10).
 
 **Full stack :** Damien POIROT (StarCobra) et Waïl ZIDANE (Vigelos0).
